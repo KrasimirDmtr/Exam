@@ -1,11 +1,28 @@
 .main {
-    width: 100vw;
-    height: 85vh;
-    background-image: url('../assets/fitbackground.jpg');
-    background-position: center;
-    background-size:cover;
-    background-repeat: no-repeat;
-    margin: 0px;
-    filter:blur(8px);
-    -webkit-filter: blur(8px);
+  width: 100vw;
+  height: 85vh;
+  background-image: url("../assets/fitbackground.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0px;
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+}
+
+.text {
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  /* font-weight: bold; */
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+  font-family: Courier, monospace;
 }

@@ -16,11 +16,12 @@ import { AppRoutingModule } from '../app-routing.module';
     MainComponent
   ],
   imports: [
-    CommonModule,AppRoutingModule,
+    CommonModule,AppRoutingModule
   ],
   exports: [HeaderComponent,
     FooterComponent,
     HomePageComponent,MainComponent
   ]
 })
-export class CoreModule { }
+export class CoreModule { 
+}
