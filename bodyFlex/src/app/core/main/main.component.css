@@ -1,0 +1,11 @@
+.main {
+    width: 100vw;
+    height: 85vh;
+    background-image: url('../assets/fitbackground.jpg');
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    margin: 0px;
+    filter:blur(8px);
+    -webkit-filter: blur(8px);
+}
