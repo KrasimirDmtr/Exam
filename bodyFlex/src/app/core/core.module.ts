@@ -4,6 +4,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainComponent } from './main/main.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -15,7 +16,7 @@ import { MainComponent } from './main/main.component';
     MainComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,AppRoutingModule,
   ],
   exports: [HeaderComponent,
     FooterComponent,
