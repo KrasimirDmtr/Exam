@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingPageModule } from './loading-page/loading-page.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { LoadingPageModule } from './loading-page/loading-page.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoadingPageModule
+    LoadingPageModule,
+    CoreModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
