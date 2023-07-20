@@ -1,4 +1,5 @@
 export interface Info {
+    splitName: string,
     timesPerWeek: number,
     exp: string,
     goal: string,
