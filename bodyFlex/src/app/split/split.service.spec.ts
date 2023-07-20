@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { SplitServiceService } from './split-service.service';
+import { SplitService } from './split.service';
 
-describe('SplitServiceService', () => {
-  let service: SplitServiceService;
+describe('SplitService', () => {
+  let service: SplitService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(SplitServiceService);
+    service = TestBed.inject(SplitService);
   });
 
   it('should be created', () => {
