@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoadingPageModule } from './loading-page/loading-page.module';
 import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http'
+import { UserModule } from './user/user.module';
+import { SplitModule } from './split/split.module';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http'
     LoadingPageModule,
     CoreModule,
     HttpClientModule,
+    UserModule,
+    SplitModule,
 
   ],
   providers: [],
