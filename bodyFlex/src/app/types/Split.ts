@@ -1,6 +1,6 @@
 export interface Info {
     timesPerWeek: number,
-    exp: number,
+    exp: string,
     goal: string,
     exercises: [{
         exercise: string,
