@@ -16,6 +16,7 @@ export class RegisterComponent {
 
 
   handleSubmit() {
-
+    console.log(this.registerForm.get('email'));
+    
   }
 }

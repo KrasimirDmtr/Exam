@@ -8,11 +8,21 @@
             <input type="text" id="email" name="email" formControlName="email">
             <label for="email">Email</label>
         </div>
+        <div *ngIf="loginForm.get('email')?.touched">
+            <p class="error" *ngIf="loginForm.get('email')?.errors?.['required']">
+                Email is Required!
+            </p>
+        </div>
         <div class="form-group">
             <input type="text" id="password" name="password" formControlName="password">
             <label for="password">Password</label>
         </div>
-        <a href="#">
+        <div *ngIf="loginForm.get('password')?.touched">
+            <p class="error" *ngIf="loginForm.get('password')?.errors?.['required']">
+                Password is Required!
+            </p>
+        </div>
+        <a routerLink="/home">
             <span></span>
             <span></span>
             <span></span>

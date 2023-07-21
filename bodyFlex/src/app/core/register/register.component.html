@@ -8,21 +8,39 @@
             <input type="text" id="email" name="email" formControlName="email">
             <label for="email">Email</label>
         </div>
+        <!-- Email Error -->
+        <div *ngIf="registerForm.get('email')?.touched">
+            <p class="error" *ngIf="registerForm.get('email')?.errors?.['required']">
+                Email is Required!
+            </p>
+        </div>
         <div class="form-group">
             <input type="text" id="password" name="password" formControlName="password">
             <label for="password">Password</label>
         </div>
+        <!-- Password Error -->
+        <div *ngIf="registerForm.get('password')?.touched">
+            <p class="error" *ngIf="registerForm.get('password')?.errors?.['required']">
+                Password is Required!
+            </p>
+        </div>
+
         <div class="form-group">
             <input type="text" id="repeatPassword" name="repeatPassword" formControlName="repeatPassword">
             <label for="repeatPassword">Repeat Password</label>
         </div>
-        <a href=" #">
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                Register
-                </a>
+        <div *ngIf="registerForm.get('repeatPassword')?.touched">
+            <p class="error" *ngIf="registerForm.get('repeatPassword')?.errors?.['required']">
+                Repeat Password is Required!
+            </p>
+        </div>
+        <a routerLink="/home">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Register
+        </a>
     </form>
 
 </div>
