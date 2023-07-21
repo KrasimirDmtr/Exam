@@ -7,7 +7,7 @@ import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -21,7 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
   ],
   imports: [
-    CommonModule,AppRoutingModule,ReactiveFormsModule,
+    CommonModule,FormsModule,ReactiveFormsModule,AppRoutingModule
   ],
   exports: [HeaderComponent,
     FooterComponent,

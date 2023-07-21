@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { SplitModule } from './split/split.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+// import { MatchpassDirective } from './shared/validators/matchpass.directive';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms'
+import { matchPassValidator } from 'src/app/shared/validators/match-pass';
 
 @Component({
   selector: 'app-register',
@@ -9,14 +10,20 @@ import { FormBuilder, Validators } from '@angular/forms'
 export class RegisterComponent {
   registerForm = this.fb.group({
     email: ['', Validators.required, Validators.email],
-    password: ['', Validators.required,],
-    repeatPassword: ['', Validators.required,]
+    passGroup: this.fb.group(
+      {
+        password: ['', [Validators.required, Validators.minLength(5)]],
+        repeatPassword: ['', [Validators.required]],
+      },
+      {
+        validators: [matchPassValidator("password", "repeatPassword")]
+      }
+    ),
   })
   constructor(private fb: FormBuilder) { }
 
 
   handleSubmit() {
     console.log(this.registerForm.get('email'));
-    
   }
 }

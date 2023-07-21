@@ -28,8 +28,7 @@ body {
   padding: 0;
   color: #fff;
   text-align: center;
-  font-family: Comic Sans MS, Comic Sans, cursive
-
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 
 .login-box .form-group {
@@ -53,7 +52,8 @@ body {
   top: 0;
   left: 0;
   padding: 10px 0;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
   color: white;
   pointer-events: none;
   transition: 0.5s;
@@ -64,7 +64,7 @@ body {
   left: 0;
   color: #fdfdfd;
   font-size: 15px;
-  font-family: Comic Sans MS, Comic Sans, cursive
+  font-family: Comic Sans MS, Comic Sans, cursive;
 }
 .login-box form a {
   position: relative;
@@ -72,7 +72,6 @@ body {
   padding: 10px 20px;
   color: white;
   font-family: Comic Sans MS, Comic Sans, cursive;
-  font-size: 16px;
   text-decoration: none;
   text-transform: uppercase;
   overflow: hidden;
@@ -175,4 +174,10 @@ body {
 
 .ng-invalid:not(form).ng-touched {
   border: 1px solid red;
+}
+.error {
+  color: white;
+  padding: 2px;
+  margin-top: -4px;
+  font-family: sans-serif;
 }
