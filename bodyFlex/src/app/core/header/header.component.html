@@ -2,13 +2,14 @@
     <div>
         <p class="title">BodyFlex</p>
     </div>
+    <!-- Add Authentication IF -->
     <div class="menu">
         <ul class="menu-wrapper">
-            <li><a [routerLink]="'home'">Home</a></li>
-            <li><a [routerLink]="'splits'">Splits</a></li>
-            <li><a href="#">Muscle Groups</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
+            <li><a routerLink="/home">Home</a></li>
+            <li><a routerLink="/splits">Splits</a></li>
+            <li><a [routerLink]="''">Muscle Groups</a></li>
+            <li><a routerLink="/login">Login</a></li>
+            <li><a routerLink="/register">Register</a></li>
         </ul>
     </div>
 </header>
