@@ -8,6 +8,7 @@ import { CoreModule } from './core/core.module';
 import { HttpClientModule } from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { SplitModule } from './split/split.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { SplitModule } from './split/split.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     LoadingPageModule,
     CoreModule,
     HttpClientModule,
     UserModule,
     SplitModule,
-
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

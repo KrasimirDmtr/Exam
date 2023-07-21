@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { SplitService } from '../split.service';
 import { Split } from 'src/app/types/Split';
 
@@ -8,20 +8,23 @@ import { Split } from 'src/app/types/Split';
   styleUrls: ['./split.component.css']
 })
 export class SplitComponent implements OnInit {
+  @Input() splitDetails = { name: '', exp: '', tmp: '' }
   splitsList: Split[] = []
   constructor(private splitService: SplitService) {
   }
 
   ngOnInit(): void {
-    this.loadSplits()
-  }
-
-  loadSplits(): void {
     this.splitService.fetchSplits().subscribe((splits) => {
       this.splitsList = splits
+      console.log(this.splitsList);
     })
   }
+
+  addSplit(dataSplit:any) {
+    this.splitService.postSplit(this.splitDetails).subscribe()
+  }
 }
+
 
 
 // this.splitService.fetchSplits().subscribe({

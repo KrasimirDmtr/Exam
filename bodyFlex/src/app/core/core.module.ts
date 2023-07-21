@@ -5,6 +5,9 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { MainComponent } from './main/main.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -13,10 +16,12 @@ import { AppRoutingModule } from '../app-routing.module';
     HeaderComponent,
     FooterComponent,
     HomePageComponent,
-    MainComponent
+    MainComponent,
+    LoginComponent,
+    RegisterComponent,
   ],
   imports: [
-    CommonModule,AppRoutingModule
+    CommonModule,AppRoutingModule,ReactiveFormsModule,
   ],
   exports: [HeaderComponent,
     FooterComponent,

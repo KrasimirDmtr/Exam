@@ -1,0 +1,25 @@
+<app-header />
+
+<body></body>
+<div class="login-box">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="handleSubmit()">
+        <div class="form-group">
+            <input type="text" id="email" name="email" formControlName="email">
+            <label for="email">Email</label>
+        </div>
+        <div class="form-group">
+            <input type="text" id="password" name="password" formControlName="password">
+            <label for="password">Password</label>
+        </div>
+        <a href="#">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </a>
+    </form>
+
+</div>
+<app-footer />
