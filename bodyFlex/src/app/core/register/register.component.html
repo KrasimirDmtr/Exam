@@ -1,17 +1,49 @@
 <app-header />
 
 <body> </body>
-<div class="login-box">
+<div class="register-box">
     <h2>Register</h2>
     <form [formGroup]="regForm" (ngSubmit)="handleSubmit()">
         <div class="form-group">
-            <input type="text" id="email" name="email" formControlName="email">
+            <input type="text" id="email" name="email" placeholder="example@gmail.com" formControlName="email">
             <label for="email">Email</label>
         </div>
         <ng-container *ngIf="regForm.get('email')?.touched">
             <p class="error" *ngIf="regForm.get('email')?.errors?.['required']">
                 Email is required !
             </p>
+            <p class="error" *ngIf="regForm.get('email')?.errors?.['emailValidator']">
+                Email is not valid !
+            </p>
+            <ng-container formGroupName="passGroup">
+                <div class="form-group">
+                    <input type="text" id="password" name="password" formControlName="password">
+                    <label for="password">Password</label>
+                </div>
+                <ng-container *ngIf="regForm.get('passGroup')?.get('password')?.touched">
+                    <p class="error" *ngIf="regForm.get('passGroup')?.get('password')?.errors?.['required']">
+                        Password is required !
+                    </p>
+                    <p class="error" *ngIf="regForm.get('passGroup')?.get('password')?.errors?.['minlength']">
+                        Password must be at least
+                        {{
+                        regForm.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength']
+                        }}
+                        characters !
+                    </p>
+                </ng-container>
+                <div class="form-group">
+                    <input type="text" id="repeatPassword" name="repeatPassword" formControlName="repeatPassword">
+                    <label for="repeatPassword">Repeat Password</label>
+                </div>
+                <ng-container *ngIf="regForm.get('passGroup')?.get('repeatPassword')?.touched">
+                    <p class="error" *ngIf="regForm.get('passGroup')?.errors?.['matchPassValidator']||
+                    regForm.get('passGroup')?.get('repeatPassword')?.errors?.['required']">
+                        Passwords doesn't match !
+                    </p>
+                </ng-container>
+            </ng-container>
+
         </ng-container>
         <a routerLink="/home">
             <span></span>
@@ -20,11 +52,7 @@
             <span></span>
             Register
         </a>
-
-
-
     </form>
-
 </div>
 
 <app-footer />
