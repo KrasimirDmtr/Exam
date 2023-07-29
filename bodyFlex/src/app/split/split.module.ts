@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SplitComponent } from './split/split.component';
 import { Routes } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
+import { CoreModule } from '../core/core.module';
 
 // const routes: Routes = [
 //   {
@@ -15,7 +16,7 @@ import { AppRoutingModule } from '../app-routing.module';
     SplitComponent
   ],
   imports: [
-    CommonModule,AppRoutingModule
+    CommonModule,AppRoutingModule,CoreModule
   ],
   exports: [
     SplitComponent

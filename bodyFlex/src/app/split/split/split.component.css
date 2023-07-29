@@ -1,0 +1,44 @@
+.wrapper {
+  border-radius: 30px;
+  background-color: grey;
+  margin: 25px;
+  text-align: center;
+  height: 150px;
+  display: block;
+  box-sizing: border-box;
+  box-shadow: 0 20px 30px rgba(214, 5, 5, 0.6);
+}
+
+.headTittle {
+  text-align: center;
+  font-family: Marker Felt, fantasy;
+  font-size: 50px;
+  color: rgb(82, 78, 78);
+  text-shadow: red 5px 0 10px;
+}
+
+.title {
+  font-family: DejaVu Sans Mono, monospace;
+  color: white;
+  font-size: 25px;
+  text-shadow: black 5px 0 10px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.title:hover {
+  color: black;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.splitDesc {
+  font-family: DejaVu Sans Mono, monospace;
+  font-size: 17px;
+  color: white;
+  font-weight: bold;
+  text-shadow: black 5px 0 10px;
+}
+
+.main {
+}

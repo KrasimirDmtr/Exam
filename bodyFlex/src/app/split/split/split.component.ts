@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SplitService } from '../split.service';
 import { Split } from 'src/app/types/Split';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-split',
@@ -8,30 +9,22 @@ import { Split } from 'src/app/types/Split';
   styleUrls: ['./split.component.css']
 })
 export class SplitComponent implements OnInit {
-  @Input() splitDetails = { name: '', exp: '', tmp: '' }
-  splitsList: Split[] = []
-  constructor(private splitService: SplitService) {
-  }
+  splits: Split[] = []
+  constructor(private splitService: SplitService) { }
 
   ngOnInit(): void {
-    this.splitService.fetchSplits().subscribe((splits) => {
-      this.splitsList = splits
-      console.log(this.splitsList);
+    this.splitService.getSplits().pipe(map(response => {
+      let splits: any[] = [];
+      for (let key in response) {
+        
+        splits.push({...response[key],key});
+      }
+      return splits
+    })).subscribe((response) => {
+      this.splits = response
+      console.log(this.splits);
+        
     })
-  }
-
-  addSplit(dataSplit:any) {
-    this.splitService.postSplit(this.splitDetails).subscribe()
   }
 }
 
-
-
-// this.splitService.fetchSplits().subscribe({
-//   next: (splits) => {
-//     this.splitsList = splits
-//   },
-//   error: (error) => {
-//     console.error(`Error: ${error}`);
-//   }
-// })

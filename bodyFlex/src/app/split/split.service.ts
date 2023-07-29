@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Split } from '../types/Split';
 import { Observable } from 'rxjs';
+import { appUrl } from '../core/environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -16,8 +17,8 @@ httpOptions = {
 
   constructor(private http: HttpClient) { }
 
-  fetchSplits() {
-    return this.http.get<Split[]>('https://exam1-835c0-default-rtdb.europe-west1.firebasedatabase.app/Splits.json')
+  getSplits() {
+    return this.http.get<{[id:string]: Split}>(`${appUrl}/Splits.json`)
   }
 
   postSplit(split: any): Observable<Split> {

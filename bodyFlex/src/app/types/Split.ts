@@ -1,15 +1,11 @@
-export interface Info {
+export interface Split {
     splitName: string,
     timesPerWeek: number,
     exp: string,
     goal: string,
-    exercises: [{
-        exercise: string,
-        imageUrl: string,
+    exercises: [{name:string,
+        sets:number,
+        reps:number
     }],
-}
-
-export interface Split {
-    splitName: string,
-    info: Info,
+    key:string;
 }

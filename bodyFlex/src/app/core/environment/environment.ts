@@ -1,0 +1,1 @@
+export const appUrl = ('https://exam1-835c0-default-rtdb.europe-west1.firebasedatabase.app')
