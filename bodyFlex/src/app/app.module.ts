@@ -9,11 +9,13 @@ import { HttpClientModule } from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { SplitModule } from './split/split.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EmailValidatorDirective } from './shared/validators/email-validator.directive';
 // import { MatchpassDirective } from './shared/validators/matchpass.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    EmailValidatorDirective,
   ],
   imports: [
     BrowserModule,

@@ -8,7 +8,7 @@ import { matchPassValidator } from 'src/app/shared/validators/match-pass';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  registerForm = this.fb.group({
+  regForm = this.fb.group({
     email: ['', Validators.required, Validators.email],
     passGroup: this.fb.group(
       {
@@ -24,6 +24,6 @@ export class RegisterComponent {
 
 
   handleSubmit() {
-    console.log(this.registerForm.get('email'));
+    console.log(this.regForm.get('email'));
   }
 }
