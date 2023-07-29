@@ -22,8 +22,6 @@ export class SplitComponent implements OnInit {
       return splits
     })).subscribe((response) => {
       this.splits = response
-      console.log(this.splits);
-        
     })
   }
 }

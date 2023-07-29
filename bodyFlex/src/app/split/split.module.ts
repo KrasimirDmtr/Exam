@@ -4,6 +4,7 @@ import { SplitComponent } from './split/split.component';
 import { Routes } from '@angular/router';
 import { AppRoutingModule } from '../app-routing.module';
 import { CoreModule } from '../core/core.module';
+import { CurrentSplitComponent } from './current-split/current-split.component';
 
 // const routes: Routes = [
 //   {
@@ -13,7 +14,8 @@ import { CoreModule } from '../core/core.module';
 
 @NgModule({
   declarations: [
-    SplitComponent
+    SplitComponent,
+    CurrentSplitComponent
   ],
   imports: [
     CommonModule,AppRoutingModule,CoreModule
