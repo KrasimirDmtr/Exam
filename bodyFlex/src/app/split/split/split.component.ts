@@ -16,12 +16,11 @@ export class SplitComponent implements OnInit {
     this.splitService.getSplits().pipe(map(response => {
       let splits: any[] = [];
       for (let key in response) {
-        
         splits.push({...response[key],key});
       }
       return splits
     })).subscribe((response) => {
-      this.splits = response
+      this.splits = response    
     })
   }
 }

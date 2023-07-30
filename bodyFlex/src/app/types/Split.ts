@@ -1,11 +1,15 @@
+
+export interface Exercise {
+    name: string,
+    sets: number,
+    reps: string
+}
+
 export interface Split {
     splitName: string,
     timesPerWeek: number,
     exp: string,
     goal: string,
-    exercises: [{name:string,
-        sets:number,
-        reps:number
-    }],
-    key:string;
+    exercises: Exercise,
+    key: string;
 }

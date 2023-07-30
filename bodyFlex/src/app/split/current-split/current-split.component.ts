@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SplitService } from '../split.service';
 import { ActivatedRoute } from '@angular/router';
-import { Split } from 'src/app/types/Split';
+import { Exercise, Split } from 'src/app/types/Split';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-current-split',
@@ -10,20 +11,21 @@ import { Split } from 'src/app/types/Split';
 })
 export class CurrentSplitComponent implements OnInit {
 
-  constructor(private splitService: SplitService, private activatedRoute: ActivatedRoute) {} 
-  split: Split | undefined; 
+  constructor(private splitService: SplitService, private activatedRoute: ActivatedRoute) { }
+  split: Split | undefined;
+  ngOnInit(): void {
+    this.fetchSplit();
+  }
 
-    ngOnInit(): void {
-      this.fetchTheme();
-    }
+  fetchSplit() {
+    const key = this.activatedRoute.snapshot.params['key']
 
-    fetchTheme(){
-      const key = this.activatedRoute.snapshot.params['key']
+    this.splitService.getSplit(key).subscribe((split) => {
+      this.split = split;
+      console.log(split.exercises);
+    })
+  }
 
-      this.splitService.getSplit(key).subscribe((split) => {
-        this.split = split;
-        console.log({split});  
-      })
-    }
-  
+
+
 }

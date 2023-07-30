@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Split } from '../types/Split';
+import { Exercise, Split } from '../types/Split';
 import { Observable } from 'rxjs';
 import { appUrl } from '../core/environment/environment';
 
@@ -9,16 +9,16 @@ import { appUrl } from '../core/environment/environment';
 })
 export class SplitService {
 
-httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type': 'application/json'
-  })
-}
+  httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    })
+  }
 
   constructor(private http: HttpClient) { }
 
   getSplits() {
-    return this.http.get<{[id:string]: Split}>(`${appUrl}/splits.json`)
+    return this.http.get<{ [id: string]: Split }>(`${appUrl}/splits.json`)
   }
 
   postSplit(split: any): Observable<Split> {
@@ -26,7 +26,10 @@ httpOptions = {
       JSON.stringify(split), this.httpOptions)
   }
 
-  getSplit(key:string){
-    return this.http.get<Split>(`${appUrl}/splits/${key}`)
+  getSplit(key: string) {
+    return this.http.get<Split>(`${appUrl}/splits/${key}.json`)
+  }
+  getExerc(key: string) {
+    return this.http.get<Exercise>(`${appUrl}/splits/${key}/exercises.json`)
   }
 }
