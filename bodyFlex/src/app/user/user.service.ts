@@ -22,7 +22,7 @@ export class UserService implements OnDestroy {
     this.subscription = this.user$.subscribe((user) => {
       this.user = user;
     });
-
+    
   }
 
   headers = new HttpHeaders({
@@ -37,7 +37,6 @@ export class UserService implements OnDestroy {
     })
       .pipe(tap((user) => this.user$$.next(user)))
   }
-
 
   login(email: string, password: string) {
     return this.http

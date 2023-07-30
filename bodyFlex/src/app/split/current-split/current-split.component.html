@@ -1,8 +1,12 @@
 <app-header />
 <div class="container">
-    <div>
-        <h1 class="title">{{split?.splitName}}</h1>
-        <h1 class="title">{{split?.exp}}</h1>
-        <h1 class="title">{{split?.goal}}</h1>
+
+    <h1 class="title">{{split?.splitName}}</h1>
+    <h1 class="title">{{split?.exp}}</h1>
+    <h1 class="title">{{split?.goal}}</h1>
+
+    <div *ngFor="let el of result">
+        <p>{{el.name}}</p>
+        <p>{{el.sets}}</p>
     </div>
 </div>

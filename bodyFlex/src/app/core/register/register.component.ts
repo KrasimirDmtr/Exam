@@ -40,7 +40,6 @@ export class RegisterComponent {
       .subscribe(() => {
         this.router.navigate(['/home'])
         console.log(this.regForm.value);
-
       })
   }
 }

@@ -20,7 +20,7 @@ export class SplitComponent implements OnInit {
       }
       return splits
     })).subscribe((response) => {
-      this.splits = response    
+      this.splits = response;    
     })
   }
 }

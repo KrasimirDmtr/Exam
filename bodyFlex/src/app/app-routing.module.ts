@@ -14,7 +14,8 @@ const routes: Routes = [
   {
     path: 'splits', children: [
       { path: '', pathMatch: 'full', component: LoadingPageComponent },
-      { path: ':key', component: CurrentSplitComponent }
+      { path: ':key', component: CurrentSplitComponent },
+      { path: ':key/exercises/:key', component: CurrentSplitComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
