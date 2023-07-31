@@ -1,0 +1,27 @@
+div div span a {
+  text-decoration: none;
+}
+
+.title {
+  font-size: 22px;
+}
+
+.sets {
+  font-size: 18px;
+}
+
+.reps {
+  font-size: 18px;
+}
+
+.day {
+  font-size: 26px;
+}
+
+.exer-wrapper {
+    display: inline-block;
+    padding: 2rem 4rem;
+    vertical-align: middle;
+    box-sizing: border-box;
+    height:200px;
+}
