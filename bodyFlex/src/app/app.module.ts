@@ -10,11 +10,13 @@ import { UserModule } from './user/user.module';
 import { SplitModule } from './split/split.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmailValidatorDirective } from './shared/validators/email-validator.directive';
+import { MuscleGroupComponent } from './muscle-group/muscle-group.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmailValidatorDirective,
+    MuscleGroupComponent,
   ],
   imports: [
     BrowserModule,

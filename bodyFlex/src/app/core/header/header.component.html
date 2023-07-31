@@ -7,7 +7,7 @@
         <ul class="menu-wrapper" *ngIf="!isLogged; else loggedPlate">
             <li><a routerLink="/home">Home</a></li>
             <li><a routerLink="/splits">Splits</a></li>
-            <li><a [routerLink]="''">Muscle Groups</a></li>
+            <li><a routerLink="/musclegroup">Muscle Groups</a></li>
             <li><a routerLink="/login">Login</a></li>
             <li><a routerLink="/register">Register</a></li>
         </ul>
@@ -15,7 +15,7 @@
             <ul class="menu-wrapper">
                 <li><a routerLink="/home">Home</a></li>
                 <li><a routerLink="/splits">Splits</a></li>
-                <li><a [routerLink]="''">Muscle Groups</a></li>
+                <li><a routerLink="/musclegroup">Muscle Groups</a></li>
                 <li (click)="logout()"><a>Logout</a></li>
             </ul>
         </ng-template>

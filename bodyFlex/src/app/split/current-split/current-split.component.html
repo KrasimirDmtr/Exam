@@ -1,12 +1,31 @@
 <app-header />
 <div class="container">
-
     <h1 class="title">{{split?.splitName}}</h1>
     <h1 class="title">{{split?.exp}}</h1>
     <h1 class="title">{{split?.goal}}</h1>
+    <div class="wrapper">
+        <div class="day">Monday
+            <div *ngFor="let el of result">
+                <span *ngIf="el.day === 'monday'">
+                    <p><a href="#">{{el.name}}</a></p>
+                    <p>Sets: <a href="#">{{el.sets}}</a></p>
+                    <p>Reps: <a href="#">{{el.reps}}</a></p>
+                </span>
 
-    <div *ngFor="let el of result">
-        <p>{{el.name}}</p>
-        <p>{{el.sets}}</p>
+            </div>
+            <div class="day">Tuesday
+                <div *ngFor="let el of result">
+                    <span *ngIf="el.day === 'tuesday'">{{el.name}}
+                        <p><a href="#">{{el.name}}</a></p>
+                        <p>Sets: <a href="#">{{el.sets}}</a></p>
+                        <p>Reps: <a href="#">{{el.reps}}</a></p>
+                    </span>
+                </div>
+                <div class="wednesday">Wednesday</div>
+                <div class="thursday">Thursday</div>
+                <div class="friday">Friday</div>
+                <div class="saturday">Saturday</div>
+                <div class="sunday">Sunday</div>
+            </div>
+        </div>
     </div>
-</div>

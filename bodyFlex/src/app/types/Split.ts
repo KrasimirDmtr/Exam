@@ -2,7 +2,10 @@
 export interface Exercise {
     name: string,
     sets: number,
-    reps: string
+    reps: string,
+    day: string,
+    target: string,
+
 }
 
 export interface Split {
@@ -11,5 +14,5 @@ export interface Split {
     exp: string,
     goal: string,
     exercises: Exercise,
-    key: string;
+    key: string,
 }

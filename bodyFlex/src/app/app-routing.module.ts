@@ -6,6 +6,7 @@ import { SplitComponent } from './split/split/split.component';
 import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import { CurrentSplitComponent } from './split/current-split/current-split.component';
+import { MuscleGroupComponent } from './muscle-group/muscle-group.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoadingPageComponent },
@@ -15,11 +16,11 @@ const routes: Routes = [
     path: 'splits', children: [
       { path: '', pathMatch: 'full', component: LoadingPageComponent },
       { path: ':key', component: CurrentSplitComponent },
-      { path: ':key/exercises/:key', component: CurrentSplitComponent }
     ]
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'musclegroup', component: MuscleGroupComponent }
 ];
 
 @NgModule({

@@ -42,7 +42,7 @@ export class CurrentSplitComponent implements OnInit {
       const data = Object.entries(this.exercise)
       const id = data?.map((item) => item[0])
       this.result = data?.map((item) => item[1])
-      console.log(this.result);
+            
     });
   }
 }
