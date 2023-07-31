@@ -1,83 +1,85 @@
 <app-header />
-<div class="container">
-    <h1 class="title">{{split?.splitName}}</h1>
-    <h1 class="title">{{split?.exp}}</h1>
-    <h1 class="title">{{split?.goal}}</h1>
-    <p>If you want to see guide of the exercises, click on the exercise name !</p>
-    <div class="wrapper">
-        <div class="exer-wrapper">
-            <h2 class="day">Monday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'monday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets : {{el.sets}}</p>
-                    <p class="reps">Reps : {{el.reps}}</p>
-                    <br />
-                </span>
 
+    <div class="container">
+        <h1 class="title">{{split?.splitName}}</h1>
+        <h1 class="title">{{split?.exp}}</h1>
+        <h1 class="title">{{split?.goal}}</h1>
+        <p>If you want to see guide of the exercises, click on the exercise name !</p>
+        <div class="wrapper">
+            <div class="exer-wrapper">
+                <h2 class="day">Monday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'monday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets : {{el.sets}}</p>
+                        <p class="reps">Reps : {{el.reps}}</p>
+                        <br />
+                    </span>
+
+                </div>
             </div>
-        </div>
-        <div class="exer-wrapper">
-            <h2 class="day">Tuesday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'tuesday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
-                    <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
-                    <br />
-                </span>
+            <div class="exer-wrapper">
+                <h2 class="day">Tuesday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'tuesday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
+                        <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
+                        <br />
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="exer-wrapper">
-            <h2 class="day">Wednesday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'wednesday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
-                    <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
-                    <br />
-                </span>
+            <div class="exer-wrapper">
+                <h2 class="day">Wednesday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'wednesday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
+                        <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
+                        <br />
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="exer-wrapper">
-            <h2 class="day">Thursday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'thursday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
-                    <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
-                    <br />
-                </span>
+            <div class="exer-wrapper">
+                <h2 class="day">Thursday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'thursday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
+                        <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
+                        <br />
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="exer-wrapper">
-            <h2 class="day">Friday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'friday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
-                    <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
-                    <br />
-                </span>
+            <div class="exer-wrapper">
+                <h2 class="day">Friday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'friday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
+                        <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
+                        <br />
+                    </span>
+                </div>
             </div>
-        </div>
-        <div class="exer-wrapper">
-            <h2 class="day">Saturday</h2>
-            <br />
-            <div *ngFor="let el of result" class="contain">
-                <span *ngIf="el.day === 'saturday'">
-                    <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
-                    <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
-                    <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
-                    <br />
-                </span>
+            <div class="exer-wrapper">
+                <h2 class="day">Saturday</h2>
+                <br />
+                <div *ngFor="let el of result" class="contain">
+                    <span *ngIf="el.day === 'saturday'">
+                        <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
+                        <p class="sets">Sets: <a href="#">{{el.sets}}</a></p>
+                        <p class="reps">Reps: <a href="#">{{el.reps}}</a></p>
+                        <br />
+                    </span>
+                </div>
             </div>
+            <div class="sunday">Sunday</div>
         </div>
-        <div class="sunday">Sunday</div>
     </div>
-</div>
+
