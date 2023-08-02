@@ -3,25 +3,95 @@ div div span a {
 }
 
 .title {
-  font-size: 22px;
+  font-size: 24px;
+  font-family: Marker Felt, fantasy;
+  color: rgb(92, 91, 91);
+}
+
+.title:hover {
+  visibility:hidden;
+}
+
+.title:hover::after {
+  content: 'Click for guide';
+  visibility: visible;
+  display: block;
+  position: relative;
 }
 
 .sets {
   font-size: 18px;
+  font-family: Blippo, fantasy;
 }
 
 .reps {
   font-size: 18px;
+  font-family: Blippo, fantasy;
 }
 
 .day {
   font-size: 26px;
+  font-family: DejaVu Sans Mono, monospace;
 }
 
 .exer-wrapper {
-    display: inline-block;
-    padding: 2rem 4rem;
-    vertical-align: middle;
-    box-sizing: border-box;
-    height:200px;
+  display: inline-block;
+  padding: 2rem 2rem;
+  vertical-align: middle;
+  box-sizing: border-box;
+  height: 200px;
+  border-left: 5px solid rgb(0, 0, 0);
+  width: fit-content;
 }
+
+
+
+.splitName {
+  font-size: 40px;
+  text-align: center;
+  font-family: Marker Felt, fantasy;
+  text-shadow: 1px 1px 2px red, 0 0 1em rgb(255, 1, 1),
+    0 0 0.2em rgb(238, 36, 0);
+  color: rgb(255, 251, 251);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.splitExp {
+  font-size: 34px;
+  text-align: center;
+  font-family: Arial Narrow, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px red, 0 0 1em rgb(255, 1, 1),
+    0 0 0.2em rgb(238, 36, 0);
+  color: rgb(255, 251, 251);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.splitGoal {
+  text-align: center;
+  font-size: 34px;
+  font-family: Arial Narrow, sans-serif;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px red, 0 0 1em rgb(255, 1, 1),
+    0 0 0.2em rgb(238, 36, 0);
+  color: rgb(255, 251, 251);
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.guide {
+  text-align: center;
+  font-size: 26px;
+  text-decoration: underline;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.breakLine {
+  border-bottom: 2px solid black ;
+}
+
+
+
