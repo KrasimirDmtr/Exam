@@ -93,7 +93,6 @@
             <div *ngFor="let el of result" class="contain">
                 <span *ngIf="el.day === 'saturday'">
                     <p *ngIf="el.name === 'Rest'; else temp"><a class="title">{{el.name}}</a></p>
-                    <hr class="breakLine">
                     <ng-template #temp>
                         <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
                         <p class="sets">Sets: {{el.sets}}</p>
@@ -110,7 +109,6 @@
             <div *ngFor="let el of result" class="contain">
                 <span *ngIf="el.day === 'sunday'">
                     <p *ngIf="el.name === 'Rest'; else temp"><a class="title">{{el.name}}</a></p>
-                    <hr class="breakLine">
                     <ng-template #temp>
                         <p><a href="{{el.guide}}" target="_blank" class="title">{{el.name}}</a></p>
                         <p class="sets">Sets: {{el.sets}}</p>

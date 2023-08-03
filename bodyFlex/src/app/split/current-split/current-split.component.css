@@ -9,23 +9,18 @@ div div span a {
 }
 
 .title:hover {
-  visibility:hidden;
-}
-
-.title:hover::after {
-  content: 'Click for guide';
-  visibility: visible;
-  display: block;
-  position: relative;
+  font-size: 26px;
+  font-family: Marker Felt, fantasy;
+  color: rgb(243, 2, 2);
 }
 
 .sets {
-  font-size: 18px;
+  font-size: 20px;
   font-family: Blippo, fantasy;
 }
 
 .reps {
-  font-size: 18px;
+  font-size: 20px;
   font-family: Blippo, fantasy;
 }
 
