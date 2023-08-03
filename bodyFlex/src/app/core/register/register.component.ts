@@ -14,32 +14,19 @@ import { UserService } from 'src/app/user/user.service';
 export class RegisterComponent {
   regForm = this.fb.group({
     email: ['', emailValidator(DEFAULT_DOMAINS)],
-    passGroup: this.fb.group(
-      {
-        password: ['', [Validators.required, Validators.minLength(5)]],
-        repeatPassword: ['', [Validators.required]],
-      },
-      {
-        validators: [matchPassValidator("password", "repeatPassword")]
-      }
-    ),
+    password: ['', [Validators.required, Validators.minLength(6), matchPassValidator("password", "repeatPassword")]],
+    repeatPassword: ['', [Validators.required, matchPassValidator("password", "repeatPassword")]]
   })
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private route: Router) { }
 
+  register() {
+    const userData = Object.assign(this.regForm.value)
+    console.log(userData);
 
-  register(): void {
-    if (this.regForm.invalid) {
-      return
-    }
-
-    const {
-      email, passGroup: { password, repeatPassword } = {}
-    } = this.regForm.value;
-    this.userService
-      .register(email!, password!, repeatPassword!)
-      .subscribe(() => {
-        this.router.navigate(['/home'])
-        console.log(this.regForm.value);
-      })
+    this.userService.registerWithEmailAndPassword(userData).then((res: any) => {
+      this.route.navigateByUrl('login');
+    }).catch((error: any) => {
+      console.error(error);
+    })
   }
 }

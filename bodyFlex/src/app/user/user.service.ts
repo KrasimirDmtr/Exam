@@ -1,65 +1,19 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable, OnDestroy } from '@angular/core';
-import { User } from '../types/User';
-import { BehaviorSubject, Subscription, tap } from 'rxjs';
-import { appUrl } from '../core/environment/environment';
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService implements OnDestroy {
-  private user$$ = new BehaviorSubject<User | undefined>(undefined);
-  public user$ = this.user$$.asObservable();
+export class UserService {
 
-  user: User | undefined;
-  USER_KEY = '[user]';
-  get isLogged(): boolean {
-    return !!this.user;
+  constructor(private afs: AngularFireAuth) { }
+
+  registerWithEmailAndPassword(user: { email: string, password: string }) {
+    return this.afs.createUserWithEmailAndPassword(user.email, user.password);
+
   }
-  subscription: Subscription;
+  signInWithEmailAndPassword(user: { email: string, password: string }) {
+    return this.afs.signInWithEmailAndPassword(user.email, user.password);
 
-  constructor(private http: HttpClient) {
-    this.subscription = this.user$.subscribe((user) => {
-      this.user = user;
-    });
-    
   }
-
-  headers = new HttpHeaders({
-  })
-  register(
-    email: string,
-    password: string,
-    repeatPassword: string,
-  ) {
-    return this.http.post<User>(`${appUrl}/register.json`, {
-      email, password, repeatPassword
-    })
-      .pipe(tap((user) => this.user$$.next(user)))
-  }
-
-  login(email: string, password: string) {
-    return this.http
-      .post<User>(`${appUrl}/login.json`, { email, password })
-      .pipe(tap((user) => this.user$$.next(user)))
-  }
-
-  logout() {
-    return this.http
-      .post<User>(`${appUrl}/logout.json`, {})
-      .pipe(tap(() => this.user$$.next(undefined)))
-  }
-
-  getProfile() {
-    return this.http
-      .get<User>(`${appUrl}/login.json`)
-      .pipe(tap((user) => this.user$$.next(user)))
-  }
-
-
-  ngOnDestroy(): void {
-    this.subscription.unsubscribe();
-  }
-
-
 }

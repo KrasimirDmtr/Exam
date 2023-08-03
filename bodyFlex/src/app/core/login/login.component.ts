@@ -14,20 +14,16 @@ export class LoginComponent {
     password: ['', Validators.required,]
   })
 
-  constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
+  constructor(private fb: FormBuilder, private userService: UserService, private route: Router) { }
 
+  loginWithEmailAndPass() {
+    const userData = Object.assign(this.loginForm.value)
 
-  login(): void {
-    if (this.loginForm.invalid) {
-      return
-    }
-
-    const { email, password } = this.loginForm.value;
-
-    this.userService.login(email!, password!).subscribe(() => {
-      this.router.navigate(['/home'])
+    this.userService.signInWithEmailAndPassword(userData).then((res: any) => {
+      this.route.navigateByUrl('home');
+    }).catch((error: any) => {
+      console.error(error);
     })
   }
-
 
 }

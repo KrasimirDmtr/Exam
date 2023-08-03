@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "exam1-835c0": {
+      "hosting": {
+        "bodyFlex": [
+          "bodyflex"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "exam1-835c0"
+  }
+}

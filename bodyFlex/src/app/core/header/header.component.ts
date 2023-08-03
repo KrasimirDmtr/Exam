@@ -10,18 +10,18 @@ import { UserService } from 'src/app/user/user.service';
 export class HeaderComponent {
   constructor(private userService: UserService, private router: Router) { }
 
-  get isLogged(): boolean {
-    return this.userService.isLogged
-  }
+  // get isLogged(): boolean {
+  //   return this.userService.isLogged
+  // }
 
-  logout(): void {
-    this.userService.logout().subscribe({
-      next: () => {
-        this.router.navigate(['/login'])
-      },
-      error: () => {
-        this.router.navigate(['/login'])
-      }
-    })
-  }
+  // logout(): void {
+  //   this.userService.logout().subscribe({
+  //     next: () => {
+  //       this.router.navigate(['/login'])
+  //     },
+  //     error: () => {
+  //       this.router.navigate(['/login'])
+  //     }
+  //   })
+  // }
 }

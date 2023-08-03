@@ -3,7 +3,7 @@
 <body></body>
 <div class="login-box">
     <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <form [formGroup]="loginForm" (ngSubmit)="loginWithEmailAndPass()">
         <div class="form-group">
             <input  type="text" id="email" name="email" placeholder="example@gmail.com" formControlName="email">
             <label for="email">Email</label>
@@ -22,7 +22,7 @@
                 Password is Required!
             </p>
         </div>
-        <button type="button" (click)="login()">
+        <button type="button" (click)="loginWithEmailAndPass()">
             <span></span>
             <span></span>
             <span></span>

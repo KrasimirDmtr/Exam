@@ -24,9 +24,7 @@ export class CurrentSplitComponent implements OnInit {
     this.fetchExerc();
   }
 
-  get isLogged(): boolean {
-    return this.userService.isLogged;
-  }
+
 
   fetchSplit() {
     const key = this.activatedRoute.snapshot.params['key'];
@@ -41,8 +39,7 @@ export class CurrentSplitComponent implements OnInit {
       this.exercise = exer;
       const data = Object.entries(this.exercise)
       const id = data?.map((item) => item[0])
-      this.result = data?.map((item) => item[1])
-            
+      this.result = data?.map((item) => item[1])       
     });
   }
 }

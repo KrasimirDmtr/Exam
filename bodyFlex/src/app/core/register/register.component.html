@@ -15,19 +15,19 @@
             <!-- <p class="error" *ngIf="regForm.get('email')?.errors?.['emailValidator']">
                 Email is not valid !
             </p> -->
-            <ng-container formGroupName="passGroup">
+            <ng-container>
                 <div class="form-group">
                     <input type="text" id="password" name="password" placeholder="*****" formControlName="password">
                     <label for="password">Password</label>
                 </div>
-                <ng-container *ngIf="regForm.get('passGroup')?.get('password')?.touched">
-                    <p class="error" *ngIf="regForm.get('passGroup')?.get('password')?.errors?.['required']">
+                <ng-container *ngIf="regForm.get('password')?.touched">
+                    <p class="error" *ngIf="regForm.get('password')?.errors?.['required']">
                         Password is required !
                     </p>
-                    <p class="error" *ngIf="regForm.get('passGroup')?.get('password')?.errors?.['minlength']">
+                    <p class="error" *ngIf="regForm.get('password')?.errors?.['minlength']">
                         Password must be at least
                         {{
-                        regForm.get('passGroup')?.get('password')?.errors?.['minlength']?.['requiredLength']
+                        regForm.get('password')?.errors?.['minlength']?.['requiredLength']
                         }}
                         characters !
                     </p>
@@ -37,9 +37,9 @@
                         formControlName="repeatPassword">
                     <label for="repeatPassword">Repeat Password</label>
                 </div>
-                <ng-container *ngIf="regForm.get('passGroup')?.get('repeatPassword')?.touched">
-                    <p class="error" *ngIf="regForm.get('passGroup')?.errors?.['matchPassValidator']||
-                    regForm.get('passGroup')?.get('repeatPassword')?.errors?.['required']">
+                <ng-container *ngIf="regForm.get('repeatPassword')?.touched">
+                    <p class="error" *ngIf="regForm.get('repeatPassword')?.errors?.['matchPassValidator']||
+                    regForm.get('repeatPassword')?.errors?.['required']">
                         Passwords doesn't match !
                     </p>
                 </ng-container>
