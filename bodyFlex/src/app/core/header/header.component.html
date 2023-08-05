@@ -2,7 +2,6 @@
     <div>
         <p class="title">BodyFlex</p>
     </div>
-    <!-- Add Authentication IF -->
     <div class="menu">
         <ul class="menu-wrapper">
             <li><a routerLink="/home">Home</a></li>
@@ -12,11 +11,11 @@
             <li><a routerLink="/register">Register</a></li>
         </ul>
         <ng-template #loggedPlate>
-            <ul class="menu-wrapper">
-                <li><a routerLink="/home">Home</a></li>
+            <ul  class="menu-wrapper">
+                <li><a routerLink="/home"></a></li>
                 <li><a routerLink="/splits">Splits</a></li>
                 <li><a routerLink="/musclegroup">Muscle Groups</a></li>
-                <li><a>Logout</a></li>
+                <li><a (click)="logOut()">Logout</a></li>
             </ul>
         </ng-template>
     </div>
