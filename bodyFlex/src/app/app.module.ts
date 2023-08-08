@@ -4,7 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoadingPageModule } from './loading-page/loading-page.module';
 import { CoreModule } from './core/core.module';
-import { HttpClientModule } from '@angular/common/http'
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http'
 import { UserModule } from './user/user.module';
 import { SplitModule } from './split/split.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -23,6 +23,8 @@ import { provideRemoteConfig, getRemoteConfig } from '@angular/fire/remote-confi
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { LoaderComponent } from './shared/loader/loader.component';
+import { LoadingInterceptor } from './loading.interceptor';
 
 
 
@@ -31,6 +33,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     AppComponent,
     EmailValidatorDirective,
     MuscleGroupComponent,
+    LoaderComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,
@@ -56,8 +60,13 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     AngularFireAuthModule
   ],
   providers: [
-    ScreenTrackingService, UserTrackingService
+    ScreenTrackingService, UserTrackingService,
+    {
+      provide: HTTP_INTERCEPTORS, useClass: LoadingInterceptor, multi: true
+    }
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule { 
+
+}
