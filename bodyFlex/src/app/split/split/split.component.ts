@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { SplitService } from '../split.service';
 import { Split } from 'src/app/types/Split';
 import { map } from 'rxjs';
+import { UserService } from 'src/app/user/user.service';
 
 @Component({
   selector: 'app-split',
@@ -10,7 +11,12 @@ import { map } from 'rxjs';
 })
 export class SplitComponent implements OnInit {
   splits: Split[] = []
-  constructor(private splitService: SplitService) { }
+  constructor(private splitService: SplitService, private userService: UserService) { }
+
+  
+  isAuthenticated(){
+    return this.userService.isLogged();
+  }
 
   ngOnInit(): void {
     this.splitService.getSplits().pipe(map(response => {

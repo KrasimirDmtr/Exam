@@ -6,11 +6,6 @@ import { AppRoutingModule } from '../app-routing.module';
 import { CoreModule } from '../core/core.module';
 import { CurrentSplitComponent } from './current-split/current-split.component';
 
-// const routes: Routes = [
-//   {
-//     path: 
-//   }
-// ]
 
 @NgModule({
   declarations: [

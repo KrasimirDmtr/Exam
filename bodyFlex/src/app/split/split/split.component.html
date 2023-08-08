@@ -1,18 +1,26 @@
 <app-header />
-<div class="main">
-    <div class="split-box">
-        <h1 class="headTittle">Splits</h1>
-        <div *ngFor="let split of splits" class="container">
-            <div class="wrapper">
-                <a class="title" [routerLink]="split.key">{{split.splitName}}</a>
-                <span class="splitDesc">
-                    <p>Expierence : {{split.exp}}</p>
-                    <p>Times per Week : {{split.timesPerWeek}}</p>
-                    <p>Goal : {{split.goal}}</p>
-                </span>
+<div class="guest" *ngIf="!isAuthenticated() else loggedPlate">
+    <h1>You need to login to view this page!</h1>
+    <a routerLink="/login">Login</a>
+
+</div>
+<app-footer />
+
+<ng-template #loggedPlate>
+    <div class="main">
+        <div class="split-box">
+            <h1 class="headTittle">Splits</h1>
+            <div *ngFor="let split of splits" class="container">
+                <div class="wrapper">
+                    <a class="title" [routerLink]="split.key">{{split.splitName}}</a>
+                    <span class="splitDesc">
+                        <p>Expierence : {{split.exp}}</p>
+                        <p>Times per Week : {{split.timesPerWeek}}</p>
+                        <p>Goal : {{split.goal}}</p>
+                    </span>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<app-footer />
+    <app-footer />
+</ng-template>

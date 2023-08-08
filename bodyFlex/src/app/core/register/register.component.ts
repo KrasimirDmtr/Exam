@@ -21,8 +21,6 @@ export class RegisterComponent {
 
   register() {
     const userData = Object.assign(this.regForm.value)
-    console.log(userData);
-
     this.userService.registerWithEmailAndPassword(userData).then((res: any) => {
       this.route.navigateByUrl('login');
     }).catch((error: any) => {
