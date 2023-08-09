@@ -1,6 +1,7 @@
 <app-header />
 <div class="container">
-    <p class="splitName">{{split?.splitName}}</p>
+    <button class="subscribe" (click)="subscribe()">Subscribe</button>
+    <p class="splitName">{{split?.splitName}}</p> 
     <p class="splitExp">Level : {{split?.exp}}</p>
     <p class="splitGoal">Goal : {{split?.goal}}</p>
     <p class="guide">If you want to see guide of the exercises, click on the exercise name !</p>

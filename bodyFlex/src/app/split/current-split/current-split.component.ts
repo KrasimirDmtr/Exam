@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SplitService } from '../split.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Exercise, Split } from 'src/app/types/Split';
 import { UserService } from 'src/app/user/user.service';
 
@@ -13,7 +13,8 @@ export class CurrentSplitComponent implements OnInit {
   constructor(
     private splitService: SplitService,
     private activatedRoute: ActivatedRoute,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) { }
   split: Split | undefined;
   exercise: Exercise | undefined;
@@ -43,6 +44,10 @@ export class CurrentSplitComponent implements OnInit {
       const id = data?.map((item) => item[0])
       this.result = data?.map((item) => item[1])
     });
+  }
+
+  subscribe(){
+    
   }
 
 }
