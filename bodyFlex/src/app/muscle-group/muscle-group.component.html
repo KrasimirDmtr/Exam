@@ -1,6 +1,9 @@
 <app-header />
-<body></body>
 
-<div>
-    
-</div>
+<body>
+    <div *ngFor="let muscle of muscles">
+        <div><img src="{{muscle.imageUrl}}" alt="Muscle" class="img"></div>
+    </div>
+</body>
+
+<app-footer />

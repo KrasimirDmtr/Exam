@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Exercise, Split } from '../types/Split';
+import { Muscle } from '../types/Muscle';
 import { Observable } from 'rxjs';
 import { appUrl } from '../core/environment/environment';
 
@@ -34,5 +35,8 @@ export class SplitService {
     return this.http.get<Exercise>(`${appUrl}/splits/${key}/exercises.json`)
   }
 
+  getMuscles() {
+    return this.http.get<{ [id: string]: Muscle }>(`${appUrl}/muscles.json`)
+  }
 
 }
