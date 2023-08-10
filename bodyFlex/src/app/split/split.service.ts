@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Exercise, Split } from '../types/Split';
-import { Observable} from 'rxjs';
+import { Observable } from 'rxjs';
 import { appUrl } from '../core/environment/environment';
 
 @Injectable({
@@ -29,9 +29,10 @@ export class SplitService {
   getSplit(key: string) {
     return this.http.get<Split>(`${appUrl}/splits/${key}.json`)
   }
+
   getExerc(key: string) {
     return this.http.get<Exercise>(`${appUrl}/splits/${key}/exercises.json`)
   }
 
-  
+
 }

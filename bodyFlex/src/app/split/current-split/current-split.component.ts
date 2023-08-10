@@ -3,6 +3,7 @@ import { SplitService } from '../split.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Exercise, Split } from 'src/app/types/Split';
 import { UserService } from 'src/app/user/user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-current-split',
@@ -14,14 +15,15 @@ export class CurrentSplitComponent implements OnInit {
     private splitService: SplitService,
     private activatedRoute: ActivatedRoute,
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private http: HttpClient
   ) { }
   split: Split | undefined;
   exercise: Exercise | undefined;
   result: any[] = [];
+  userData: string = ''
 
 
-  
   ngOnInit(): void {
     this.fetchSplit();
     this.fetchExerc();
@@ -46,8 +48,9 @@ export class CurrentSplitComponent implements OnInit {
     });
   }
 
-  subscribe(){
-    
+  subscribe() {
+    const key = this.activatedRoute.snapshot.params['key'];
+    const userData = localStorage.getItem('user')
   }
 
 }
