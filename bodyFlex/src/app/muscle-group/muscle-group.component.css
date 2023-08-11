@@ -24,24 +24,22 @@ body {
   overflow: hidden;
   object-position: center;
   backface-visibility: hidden;
-  transition: .5s ease;
+  transition: 0.5s ease;
 }
 
 .content {
-  transition: .5s ease;
+  transition: 0.5s ease;
   position: absolute;
   inset: 0;
   font-size: 3rem;
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   padding: 1rem;
   background: rgba(255, 255, 255, 0.4);
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 0;
-
 }
-
 
 .image-wrapper:hover .image {
   opacity: 0.3;
@@ -50,4 +48,38 @@ body {
 
 .image-wrapper:hover .content {
   opacity: 1;
+}
+.guest {
+  color: rgb(255, 255, 255);
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-image: url("../core/img/fitbackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-left: -10px;
+  margin-top: -22px;
+  width: 101%;
+  height: 100vh;
+}
+
+.guest a {
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 8px rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 35px;
+  border: none;
+  border-radius: 25% 10%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.guest a:hover {
+  background-color: #922308;
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 5px #dd2808, 0 0 25px #dd2808, 0 0 50px #dd2808,
+    0 0 100px #dd2808;
+}
+
+.guest h1 {
+  text-shadow: 5px 4px 8px rgb(0, 0, 0);
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Muscle } from '../types/Muscle';
 import { map } from 'rxjs';
 import { MuscleService } from './muscle.service';
+import { UserService } from '../user/user.service';
 
 @Component({
   selector: 'app-muscle-group',
@@ -10,9 +11,9 @@ import { MuscleService } from './muscle.service';
 })
 export class MuscleGroupComponent implements OnInit {
   muscles: Muscle[] = []
-  constructor(private muscleService: MuscleService) { }
-  test() {
-    console.log('hi');
+  constructor(private muscleService: MuscleService, private userService: UserService) { }
+  isAuthenticated() {
+    return this.userService.isLogged();
   }
   ngOnInit(): void {
     this.muscleService.getMuscles().pipe(map(response => {

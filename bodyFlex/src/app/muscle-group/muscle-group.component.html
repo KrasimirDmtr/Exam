@@ -1,17 +1,23 @@
 <app-header />
 
-<body>
-    <div *ngFor="let muscle of muscles">
-        <div class="image-wrapper">
-            <img src="{{muscle.imageUrl}}" alt="Muscle" class="img" >
-            <div class="content">
-                <div class="text">
-                    {{muscle.muscle}}
-                    <button [routerLink]="muscle.key">Click</button>
+<div class="guest" *ngIf="!isAuthenticated() else loggedPlate">
+    <h1>You need to login to view this page!</h1>
+    <a routerLink="/login">Login</a>
+
+</div>
+<ng-template #loggedPlate>
+    <body>
+        <div *ngFor="let muscle of muscles">
+            <div class="image-wrapper">
+                <img src="{{muscle.imageUrl}}" alt="Muscle" class="img">
+                <div class="content">
+                    <div class="text">
+                        {{muscle.muscle}}
+                        <button [routerLink]="muscle.key">Click</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</body>
-
+    </body>
+</ng-template>
 <app-footer />
