@@ -2,7 +2,15 @@
 
 <body>
     <div *ngFor="let muscle of muscles">
-        <div><img src="{{muscle.imageUrl}}" alt="Muscle" class="img"></div>
+        <div class="image-wrapper">
+            <img src="{{muscle.imageUrl}}" alt="Muscle" class="img" >
+            <div class="content">
+                <div class="text">
+                    {{muscle.muscle}}
+                    <button [routerLink]="muscle.key">Click</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 

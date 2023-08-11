@@ -25,6 +25,7 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { LoadingInterceptor } from './loading.interceptor';
+import { CurrentMuscleComponent } from './muscle-group/current-muscle/current-muscle.component';
 
 
 
@@ -34,7 +35,8 @@ import { LoadingInterceptor } from './loading.interceptor';
     EmailValidatorDirective,
     MuscleGroupComponent,
     LoaderComponent,
-    LoaderComponent
+    LoaderComponent,
+    CurrentMuscleComponent
   ],
   imports: [
     BrowserModule,

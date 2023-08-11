@@ -7,6 +7,7 @@ import { LoginComponent } from './core/login/login.component';
 import { RegisterComponent } from './core/register/register.component';
 import { CurrentSplitComponent } from './split/current-split/current-split.component';
 import { MuscleGroupComponent } from './muscle-group/muscle-group.component';
+import { CurrentMuscleComponent } from './muscle-group/current-muscle/current-muscle.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', component: LoadingPageComponent },
@@ -20,7 +21,13 @@ const routes: Routes = [
   },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'musclegroup', component: MuscleGroupComponent }
+  { path: 'musclegroup', component: MuscleGroupComponent },
+  {
+    path: 'musclegroup', children: [
+      { path: '', pathMatch: 'full', component: LoadingPageComponent },
+      { path: ':key', component: CurrentMuscleComponent }
+    ]
+  },
 ];
 
 @NgModule({

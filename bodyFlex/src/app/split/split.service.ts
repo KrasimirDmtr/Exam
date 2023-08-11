@@ -35,8 +35,5 @@ export class SplitService {
     return this.http.get<Exercise>(`${appUrl}/splits/${key}/exercises.json`)
   }
 
-  getMuscles() {
-    return this.http.get<{ [id: string]: Muscle }>(`${appUrl}/muscles.json`)
-  }
-
+  
 }

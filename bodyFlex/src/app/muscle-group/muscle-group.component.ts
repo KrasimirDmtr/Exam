@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SplitService } from '../split/split.service';
 import { Muscle } from '../types/Muscle';
 import { map } from 'rxjs';
+import { MuscleService } from './muscle.service';
 
 @Component({
   selector: 'app-muscle-group',
@@ -10,18 +10,21 @@ import { map } from 'rxjs';
 })
 export class MuscleGroupComponent implements OnInit {
   muscles: Muscle[] = []
-  constructor(private splitService: SplitService) { }
-
+  constructor(private muscleService: MuscleService) { }
+  test() {
+    console.log('hi');
+  }
   ngOnInit(): void {
-    this.splitService.getMuscles().pipe(map(response => {
+    this.muscleService.getMuscles().pipe(map(response => {
       let muscles: any[] = [];
       for (let key in response) {
         muscles.push({ ...response[key], key });
       }
       return muscles
     })).subscribe((response) => {
-      this.muscles = response;
-      console.log(this.muscles);
+      this.muscles = response;      
     })
   }
+
+
 }
