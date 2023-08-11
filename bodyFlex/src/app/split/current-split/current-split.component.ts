@@ -48,9 +48,5 @@ export class CurrentSplitComponent implements OnInit {
     });
   }
 
-  subscribe() {
-    const key = this.activatedRoute.snapshot.params['key'];
-    const userData = localStorage.getItem('user')
-  }
 
 }

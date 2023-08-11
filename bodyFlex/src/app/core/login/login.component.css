@@ -2,7 +2,7 @@ body {
   width: 100vw;
   height: 85vh;
   font-family: sans-serif;
-  background-image: url("../assets/fitbackground.jpg");
+  background-image: url('../img/fitbackground.jpg');
   background-position: center;
   background-size: cover;
   margin: 0px;
