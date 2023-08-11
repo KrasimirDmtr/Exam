@@ -1,10 +1,8 @@
 <app-header />
 
 <body>
-
     <h1 class="title">{{resultDesc[1]}}</h1>
-
-    <div *ngFor="let exer of resultMuscle">
+    <div *ngFor="let exer of resultMuscle" class="wrapper">
         <h2 class="exerName">{{exer.exerciseName}}</h2>
         <img src="{{exer.imageUrl}}" class="img">
     </div>
