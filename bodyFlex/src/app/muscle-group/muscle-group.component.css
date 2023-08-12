@@ -39,6 +39,7 @@ body {
   justify-content: center;
   align-items: center;
   opacity: 0;
+  cursor: pointer;
 }
 
 .image-wrapper:hover .image {

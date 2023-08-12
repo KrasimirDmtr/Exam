@@ -11,9 +11,8 @@
             <div class="image-wrapper">
                 <img src="{{muscle.imageUrl}}" alt="Muscle" class="img">
                 <div class="content">
-                    <div class="text">
+                    <div class="text" [routerLink]="muscle.key">
                         {{muscle.muscle}}
-                        <button [routerLink]="muscle.key">Click</button>
                     </div>
                 </div>
             </div>

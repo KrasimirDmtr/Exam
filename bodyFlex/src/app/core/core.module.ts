@@ -21,12 +21,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     RegisterComponent,
   ],
   imports: [
-    CommonModule,FormsModule,ReactiveFormsModule,AppRoutingModule
+    CommonModule, FormsModule, ReactiveFormsModule, AppRoutingModule
   ],
   exports: [HeaderComponent,
     FooterComponent,
-    HomePageComponent,MainComponent,RegisterComponent,LoginComponent
+    HomePageComponent, MainComponent, RegisterComponent, LoginComponent
   ]
 })
-export class CoreModule { 
+export class CoreModule {
 }
