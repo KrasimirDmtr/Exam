@@ -75,6 +75,8 @@
     15.Import NgForms in Project ✔️
 
     16.Import Firebase CLI in Project ✔️
+    -Create and Import Environment for Firebase CLI
+    -Create Environment and Export AppUrl
 
     17.Make Register Logic ✔️
     -Create Post Request in UserService for Register
@@ -133,4 +135,4 @@
     32.Check all Designs and HTMLs ✔️
     -Check if all links are working
     -Check if all pages are working 
-    
+
