@@ -136,3 +136,5 @@
     -Check if all links are working
     -Check if all pages are working 
 
+    33.Add Loader Animation ✔️
+    
